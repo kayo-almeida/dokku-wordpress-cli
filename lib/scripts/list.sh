@@ -17,9 +17,9 @@ RESULT=$(
 
 
     printf "{"
-      printf "\"domain:\": \"${SITE}\","
-      printf "\"status:\": \"${STATUS}\","
-      printf "\"database:\": \"${DATABASE}\","
+      printf "\"domain\": \"${SITE}\","
+      printf "\"status\": \"${STATUS}\","
+      printf "\"database\": \"${DATABASE}\","
     printf "},"
   done
   printf "]"

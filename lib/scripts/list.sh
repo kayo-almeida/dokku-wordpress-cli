@@ -4,7 +4,7 @@ RESULT=$(
   printf "["
   for d in /var/www/*/ ; do
     SITE=$(echo $d | sed 's/\///g' | sed 's/varwww//g') 
-    DATABASE=$(cat /etc/apache2/sites-available/${SITE}.conf | grep MYSQL_URL | grep -oE "[^ ]+$")
+    DATABASE=$(cat /etc/apache2/sites-available/${SITE}.conf | grep MYSQL_ | grep -oE "[^ ]+$")
     STATUS=unknow
     URLS=$(cat /etc/apache2/sites-available/${SITE}.conf | grep -E 'ServerName|ServerAlias' | sed 's/ //g' | sed 's/\t//g' | sed 's/\n//g'  | sed 's/ServerName/https:\/\//g' | sed 's/ServerAlias/https:\/\//g')
 

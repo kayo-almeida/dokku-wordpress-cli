@@ -22,7 +22,7 @@ cp /etc/apache2/sites-available/$DOMAIN.conf $HOME/backup/$DOMAIN/vhost/$DOMAIN.
 
 echo '\n✨   BACKUPING DATABASE\n'
 cd $HOME/backup/$DOMAIN/database 
-dokku mysql:export $(cat /etc/apache2/sites-available/$DOMAIN.conf | grep MYSQL_URL | grep -oE "[^/]+$") > backup.sql
+dokku mysql:export $(cat /etc/apache2/sites-available/$DOMAIN.conf | grep MYSQL_ | grep -oE "[^/]+$") > backup.sql
 
 echo '\n✨   ZIPPING BACKUP\n'
 cd $HOME/backup

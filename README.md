@@ -31,6 +31,12 @@ dwc backup bucket=backup-bucket-name
 dwc get-process
 ```
 
+## List sites
+
+```bash
+dwc list-apps
+```
+
 ## Clear in progress tasks
 
 ```bash

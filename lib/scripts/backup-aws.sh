@@ -20,6 +20,9 @@ zip -r $ZIP_NAME backup
 echo '\n✨   UPLOADING TO AWS\n'
 aws s3 cp $ZIP_NAME s3://$BUCKET_NAME
 
+echo '\n✨   CLEANING OLDER BACKUPS\n'
+./scripts/clear-backups.sh $BUCKET_NAME
+
 echo '\n✨   CLEANING BACKUP\n'
 sudo rm -rf backup
 sudo rm -rf $ZIP_NAME

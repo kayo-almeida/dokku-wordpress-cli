@@ -1,8 +1,8 @@
 #!/bin/bash
-
 EMAIL=$1
 
 # DELETING ALL CERTIFICATES
+sudo rm -r /etc/apache2/sites-available/*-le-ssl-.config
 for n in $(certbot certificates | grep "Certificate Name: " | sed "s/Certificate Name: //g"); do
  sudo certbot delete --cert-name $n
 done

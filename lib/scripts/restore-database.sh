@@ -4,7 +4,7 @@
 BACKUP_PATH=$1
 
 
-for file in $BACKUP_PATH; do
+for file in "$BACKUP_PATH/*"; do
   filename=$(basename $file)
   db_name=$(cat /etc/apache2/sites-available/$(echo $filename | sed 's/.sql//g').conf | grep MYSQL_ | grep -oE "[^/]+$")
 
